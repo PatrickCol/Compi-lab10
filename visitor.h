@@ -2,6 +2,7 @@
 #define VISITOR_H
 
 #include <list>
+#include <vector>
 #include "ast.h"
 
 class BinaryExp;
@@ -37,6 +38,7 @@ public:
     ostream& out;
     int contador = 1;
     int labelCount = 0;
+    vector<string> breakLabels;
     unordered_map<string, int> posicion;
     GencodeVisitor(ostream& out);
     void gencode(Program* program);

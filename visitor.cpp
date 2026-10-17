@@ -137,44 +137,50 @@ void GencodeVisitor::visit(IfStmt* stm) {
 
 // Genera el código del while (por implementar)
 void GencodeVisitor::visit(WhileStmt* stm) {
-    out << "while_0:"<<endl;
+    int n = labelCount++;
+    out << "while_" << n << ":" << endl;
     stm->condicion->accept(this);
     out << "cmpq $0, %rax" << endl;
-    out << "je endwhile_0" << endl;
-    for (auto s : stm->body) {   // ajusta el nombre al campo real de tu WhileStmt
-        s->accept(this);
-    }
-    out << "jmp while_0" << endl;
-    out << "endwhile_0:" << endl;
+    out << "je endwhile_" << n << endl;
+    breakLabels.push_back("endwhile_" + to_string(n));
+    for (auto s : stm->body) s->accept(this);
+    breakLabels.pop_back();
+    out << "jmp while_" << n << endl;
+    out << "endwhile_" << n << ":" << endl;
 }
 
 // Se genera el codigo para do while
 void GencodeVisitor::visit(DoWhileStmt* stm) {
     int n = labelCount++;
     out << "do_" << n << ":" << endl;
+    breakLabels.push_back("enddowhile_" + to_string(n)); // destino de un break
     for (auto s : stm->body) s->accept(this);
+    breakLabels.pop_back();
     stm->condicion->accept(this);
     out << "cmpq $0, %rax" << endl;
-    out << "jne do_" << n << endl;       // verdadero -> repetir
+    out << "jne do_" << n << endl;                       // se repite si es verdadero
     out << "enddowhile_" << n << ":" << endl;
 }
 
 // De acuerdo a la condicion, se genera el codigo para ifexp
 int GencodeVisitor::visit(IfExp* exp) {
+    int n = labelCount++;
     exp->cond->accept(this);
     out << "cmpq $0, %rax" << endl;
-    out << "je else_0" << endl;
+    out << "je ifexp_else_" << n << endl;
     exp->thenExp->accept(this);
-    out << "jmp endif_0" << endl;
-    out << "else_0:" << endl;
+    out << "jmp ifexp_end_" << n << endl;
+    out << "ifexp_else_" << n << ":" << endl;
     exp->elseExp->accept(this);
-    out << "endif_0:" << endl;
+    out << "ifexp_end_" << n << ":" << endl;
     return 0;
 }
 
 
 void GencodeVisitor::visit(BreakStmt* stm) {
-    out << "jmp endwhile_0" << endl;
+    if (breakLabels.empty())
+        throw runtime_error("break fuera de un bucle");
+    out << "jmp " << breakLabels.back() << endl;
 }
 
 // Genera el programa completo: datos, prólogo de main, sentencias y epílogo

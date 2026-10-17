@@ -1,0 +1,8 @@
+i = 1;
+total = 0;
+do
+    total = total + i * 3;
+    i = i + 1
+while i <= 4;
+print(total);
+print(i)

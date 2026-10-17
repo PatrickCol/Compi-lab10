@@ -1,0 +1,11 @@
+n = 5;
+fact = 1;
+step = 0;
+while 1 <= n do
+    fact = fact * n;
+    step = step + 1;
+    n = n - 1
+enddo;
+print(fact);
+print(step);
+print(ifexp(100 <= fact, fact, 0))

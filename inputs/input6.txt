@@ -1,0 +1,14 @@
+k = 1;
+pos = 0;
+neg = 0;
+do
+    pos = pos + ifexp(k <= 4, k * 2, 0);
+    neg = neg + ifexp(k <= 4, 0, k);
+    if 7 <= k then
+        break
+    endif;
+    k = k + 1
+while 1;
+print(pos);
+print(neg);
+print(ifexp(pos <= neg, neg - pos, pos - neg))

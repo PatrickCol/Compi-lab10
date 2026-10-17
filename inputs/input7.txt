@@ -1,0 +1,19 @@
+v = 15;
+w = 25;
+res = 0;
+if v <= w then
+    if w <= 20 then
+        res = 1
+    else
+        res = 2
+    endif
+else
+    res = 3
+endif;
+print(res);
+if res <= 1 then
+    v = v + 100
+else
+    v = v + 200
+endif;
+print(v)

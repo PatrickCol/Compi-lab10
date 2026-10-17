@@ -1,0 +1,8 @@
+a = 7;
+b = 12;
+min = ifexp(a <= b, a, b);
+max = ifexp(b <= a, a, b);
+print(min);
+print(max);
+print(ifexp(min <= 5, 100, ifexp(min <= 10, 200, 300)));
+print(ifexp(a <= 10, a * 2, b * 3) + ifexp(15 <= b, 50, 25))

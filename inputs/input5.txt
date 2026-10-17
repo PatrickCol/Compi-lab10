@@ -1,0 +1,16 @@
+row = 1;
+acc = 0;
+while row <= 3 do
+    col = 1;
+    do
+        if 3 <= col then
+            break
+        endif;
+        acc = acc + row * 10 + col;
+        col = col + 1
+    while 1;
+    row = row + 1
+enddo;
+print(acc);
+print(row);
+print(col)

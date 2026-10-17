@@ -1,0 +1,12 @@
+x = 1;
+sum = 0;
+while 1 do
+    sum = sum + x;
+    x = x + 2;
+    if 9 <= x then
+        break
+    endif;
+    print(sum)
+enddo;
+print(x);
+print(sum * 10)

@@ -1,0 +1,17 @@
+a = 0;
+b = 1;
+count = 0;
+print(a);
+print(b);
+while 1 do
+    c = a + b;
+    a = b;
+    b = c;
+    count = count + 1;
+    print(c);
+    if 20 <= c then
+        break
+    endif
+enddo;
+print(count);
+print(ifexp(count <= 5, 999, c * 2))

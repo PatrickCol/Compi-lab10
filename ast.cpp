@@ -82,6 +82,28 @@ WhileStmt::~WhileStmt() {
     for (Stmt* s : body) delete s;
 }
 
+DoWhileStmt::DoWhileStmt(Exp* c, list<Stmt*> b){
+    condicion = c;
+    body = b;
+}
+
+DoWhileStmt::~DoWhileStmt(){
+    delete condicion;
+    for (Stmt* s : body) delete s;
+}
+
+IfExp::IfExp(Exp* c, Exp* then, Exp* elsee){
+    cond = c;
+    thenExp = then;
+    elseExp = elsee;
+}
+
+IfExp::~IfExp(){
+    delete cond;
+    delete thenExp;
+    delete elseExp;
+}
+
 // Crea un programa vacío
 Program::Program() {}
 

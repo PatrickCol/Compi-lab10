@@ -120,6 +120,14 @@ Stmt* Parser::parseStmt() {
         }
         return new WhileStmt(e, body);
     }
+    else if (match(Token::DO)){
+        list<Stmt*> body = parseStmtList();
+        if (!match(Token::WHILE)) {
+            throw runtime_error("Error sintáctico: se esperaba 'while'");
+        }
+        e = parseCExp();
+        return new DoWhileStmt(e,body);
+    }
     else {
         throw runtime_error("Error sintáctico");
     }
@@ -191,6 +199,24 @@ Exp* Parser::parseFactor() {
     }
     else if (match(Token::ID)) {
         return new IdExp(previous->text);
+    }
+    else if (match(Token::IFEXP)){
+        if (!match(Token::LPAREN)) {
+            throw runtime_error("Error sintáctico: se esperaba '('");
+        }
+        Exp* cond = parseCExp();
+        if (!match(Token::COMMA)) {
+            throw runtime_error("Error sintáctico: se esperaba ','");
+        }
+        Exp* thenExp = parseCExp();
+        if (!match(Token::COMMA)) {
+            throw runtime_error("Error sintáctico: se esperaba ','");
+        }
+        Exp* elseExp = parseCExp();
+        if (!match(Token::RPAREN)) {
+            throw runtime_error("Error sintáctico: se esperaba ')'");
+        }
+        return new IfExp(cond, thenExp, elseExp);
     }
     else {
         throw runtime_error("Error sintáctico");

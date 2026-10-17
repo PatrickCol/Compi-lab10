@@ -7,11 +7,13 @@
 class BinaryExp;
 class NumberExp;
 class IdExp;
+class IfExp;
 class AssignStmt;
 class PrintStmt;
 class IfStmt;
 class WhileStmt;
 class ForStmt;
+class DoWhileStmt;
 class Program;
 
 // Interfaz Visitor: una operación visit por cada nodo del AST
@@ -25,6 +27,8 @@ public:
     virtual void visit(IfStmt* stm) = 0;
     virtual void visit(ForStmt* stm) = 0;
     virtual void visit(WhileStmt* stm) = 0;
+    virtual void visit(DoWhileStmt* stm) = 0;
+    virtual int visit(IfExp* exp) = 0;
 };
 
 // Visitor que genera código ensamblador x86-64 a partir del AST
@@ -43,6 +47,8 @@ public:
     void visit(IfStmt* stm) override;
     void visit(ForStmt* stm) override;
     void visit(WhileStmt* stm) override;
+    void visit(DoWhileStmt* stm) override;
+    int visit(IfExp* exp) override;
 };
 
 #endif // VISITOR_H

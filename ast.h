@@ -104,6 +104,24 @@ public:
     ~WhileStmt();
 };
 
+// Sentencia de repeticion: do StmtList while CExp
+class DoWhileStmt : public Stmt {
+public:
+    Exp* condicion;
+    list<Stmt*> body;
+    DoWhileStmt(Exp*, list<Stmt*>);
+    int accept(Visitor* visitor);
+    ~DoWhileStmt();
+};
+
+// Expresion condicional: ifexp (CExp, CExp, CExp)
+class IfExp : public Exp {
+public:
+    Exp* cond, *thenExp, *elseExp;
+    IfExp(Exp*, Exp*, Exp*);
+    int accept(Visitor* visitor);
+    ~IfExp();
+};
 
 // Programa: lista de sentencias
 class Program {

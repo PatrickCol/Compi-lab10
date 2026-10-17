@@ -136,7 +136,34 @@ void GencodeVisitor::visit(WhileStmt* stm) {
     out << "endwhile_0:" << endl;
 }
 
+// Se genera el codigo para do while
+void GencodeVisitor::visit(DoWhileStmt* stm) {
+    for (auto s : stm->body) {
+        s->accept(this);
+    }
+    out << "do_0:" << endl; 
+    stm->condicion->accept(this);
+    out << "cmpq $0, %rax" << endl;
+    out << "je enddowhile_0" << endl;
+    for (auto s : stm->body) {
+        s->accept(this);
+    }     
+    out << "jmp do_0" << endl;
+    out << "enddowhile_0:" << endl;                   
+}
 
+// De acuerdo a la condicion, se genera el codigo para ifexp
+int GencodeVisitor::visit(IfExp* exp) {
+    exp->cond->accept(this);
+    out << "cmpq $0, %rax" << endl;
+    out << "je else_0" << endl;
+    exp->thenExp->accept(this);
+    out << "jmp endif_0" << endl;
+    out << "else_0:" << endl;
+    exp->elseExp->accept(this);
+    out << "endif_0:" << endl;
+    return 0;
+}
 
 // Genera el programa completo: datos, prólogo de main, sentencias y epílogo
 void GencodeVisitor::gencode(Program* program) {

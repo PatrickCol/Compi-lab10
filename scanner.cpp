@@ -41,6 +41,7 @@ Token* Scanner::nextToken() {
         if (lexema == "sqrt")          return new Token(Token::SQRT,     input, first, current - first);
         else if (lexema == "print")    return new Token(Token::PRINT,    input, first, current - first);
         else if (lexema == "if")       return new Token(Token::IF,       input, first, current - first);
+        else if (lexema == "ifexp")   return new Token(Token::IFEXP,   input, first, current - first);
         else if (lexema == "while")    return new Token(Token::WHILE,    input, first, current - first);
         else if (lexema == "then")     return new Token(Token::THEN,     input, first, current - first);
         else if (lexema == "do")       return new Token(Token::DO,       input, first, current - first);
@@ -50,7 +51,7 @@ Token* Scanner::nextToken() {
         else if (lexema == "else")    return new Token(Token::ELSE,     input, first, current - first);
         else                           return new Token(Token::ID,       input, first, current - first);
     }
-    else if (strchr("+/-*();=<", c)) {
+    else if (strchr("+/-*,();=<", c)) {
         switch (c) {
             case '+': token = new Token(Token::PLUS,    c); break;
             case '-': token = new Token(Token::MINUS,   c); break;
@@ -59,6 +60,7 @@ Token* Scanner::nextToken() {
             case ')': token = new Token(Token::RPAREN,  c); break;
             case '=': token = new Token(Token::ASSIGN,  c); break;
             case ';': token = new Token(Token::SEMICOL, c); break;
+            case ',': token = new Token(Token::COMMA, c); break;
             case '*':
                 if (input[current + 1] == '*') {
                     current++;

@@ -13,6 +13,7 @@ class PrintStmt;
 class IfStmt;
 class WhileStmt;
 class DoWhileStmt;
+class BreakStmt;
 class Program;
 
 // Interfaz Visitor: una operación visit por cada nodo del AST
@@ -27,6 +28,7 @@ public:
     virtual void visit(WhileStmt* stm) = 0;
     virtual void visit(DoWhileStmt* stm) = 0;
     virtual int visit(IfExp* exp) = 0;
+    virtual void visit(BreakStmt* stm) = 0;
 };
 
 // Visitor que genera código ensamblador x86-64 a partir del AST
@@ -34,6 +36,7 @@ class GencodeVisitor : public Visitor {
 public:
     ostream& out;
     int contador = 1;
+    int labelCount = 0;
     unordered_map<string, int> posicion;
     GencodeVisitor(ostream& out);
     void gencode(Program* program);
@@ -46,6 +49,7 @@ public:
     void visit(WhileStmt* stm) override;
     void visit(DoWhileStmt* stm) override;
     int visit(IfExp* exp) override;
+    void visit(BreakStmt* stm) override;
 };
 
 #endif // VISITOR_H

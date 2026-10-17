@@ -104,6 +104,13 @@ public:
     ~WhileStmt();
 };
 
+class BreakStmt : public Stmt {
+public:
+    BreakStmt(){};
+    int accept(Visitor* visitor);
+    ~BreakStmt(){};
+};
+
 // Sentencia de repeticion: do StmtList while CExp
 class DoWhileStmt : public Stmt {
 public:

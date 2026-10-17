@@ -128,6 +128,9 @@ Stmt* Parser::parseStmt() {
         e = parseCExp();
         return new DoWhileStmt(e,body);
     }
+    else if (match(Token::BREAK)){
+        return new BreakStmt();
+    }
     else {
         throw runtime_error("Error sintáctico");
     }

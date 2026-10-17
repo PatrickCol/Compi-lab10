@@ -35,6 +35,7 @@ public:
         ENDWHILE,
         ENDDO,
         ELSE,
+        BREAK,
         END
     };
 

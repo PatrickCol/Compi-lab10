@@ -12,7 +12,8 @@ movq $1, %rax
 movq %rax, -16(%rbp)
 movq $0, %rax
 movq %rax, -24(%rbp)
-while_0movq $1, %rax
+while_0:
+movq $1, %rax
 pushq %rax
 movq -8(%rbp), %rax
 movq %rax, %rcx

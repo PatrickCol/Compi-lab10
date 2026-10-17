@@ -10,6 +10,7 @@ movq $1, %rax
 movq %rax, -8(%rbp)
 movq $0, %rax
 movq %rax, -16(%rbp)
+do_0:
 movq -16(%rbp), %rax
 pushq %rax
 movq -8(%rbp), %rax
@@ -29,7 +30,6 @@ movq %rax, %rcx
 popq %rax
 addq %rcx, %rax
 movq %rax, -8(%rbp)
-do_0:
 movq -8(%rbp), %rax
 pushq %rax
 movq $4, %rax
@@ -39,27 +39,7 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je enddowhile_0
-movq -16(%rbp), %rax
-pushq %rax
-movq -8(%rbp), %rax
-pushq %rax
-movq $3, %rax
-movq %rax, %rcx
-popq %rax
-imulq %rcx, %rax
-movq %rax, %rcx
-popq %rax
-addq %rcx, %rax
-movq %rax, -16(%rbp)
-movq -8(%rbp), %rax
-pushq %rax
-movq $1, %rax
-movq %rax, %rcx
-popq %rax
-addq %rcx, %rax
-movq %rax, -8(%rbp)
-jmp do_0
+jne do_0
 enddowhile_0:
 movq -16(%rbp), %rax
 movq %rax, %rsi

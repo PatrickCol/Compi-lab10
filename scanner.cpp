@@ -49,6 +49,7 @@ Token* Scanner::nextToken() {
         else if (lexema == "endwhile") return new Token(Token::ENDWHILE, input, first, current - first);
         else if (lexema == "enddo")    return new Token(Token::ENDDO,    input, first, current - first);
         else if (lexema == "else")    return new Token(Token::ELSE,     input, first, current - first);
+        else if (lexema == "break")    return new Token(Token::BREAK,     input, first, current - first);
         else                           return new Token(Token::ID,       input, first, current - first);
     }
     else if (strchr("+/-*,();=<", c)) {

@@ -65,12 +65,12 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_1
 movq -16(%rbp), %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_1
+ifexp_else_1:
 movq $0, %rax
-endif_0:
+ifexp_end_1:
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi
 movl $0, %eax

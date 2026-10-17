@@ -29,18 +29,10 @@ print(ifexp(min <= 5, 100, ifexp(min <= 10, 200, 300)));
 print(ifexp(a <= 10, a * 2, b * 3) + ifexp(15 <= b, 50, 25))
 
 Resultado de input2.s:
-ERROR: inputs/input2.s: Assembler messages:
-inputs/input2.s:41: Error: symbol `else_0' is already defined
-inputs/input2.s:43: Error: symbol `endif_0' is already defined
-inputs/input2.s:67: Error: symbol `else_0' is already defined
-inputs/input2.s:80: Error: symbol `else_0' is already defined
-inputs/input2.s:82: Error: symbol `endif_0' is already defined
-inputs/input2.s:83: Error: symbol `endif_0' is already defined
-inputs/input2.s:105: Error: symbol `else_0' is already defined
-inputs/input2.s:112: Error: symbol `endif_0' is already defined
-inputs/input2.s:126: Error: symbol `else_0' is already defined
-inputs/input2.s:128: Error: symbol `endif_0' is already defined
-No se pudo ensamblar o ejecutar inputs/input2.s
+7
+12
+200
+39
 
 ========================================
 input3.txt
@@ -112,8 +104,8 @@ print(row);
 print(col)
 
 Resultado de input5.s:
-23
-1
+129
+4
 3
 
 ========================================
@@ -136,12 +128,9 @@ print(neg);
 print(ifexp(pos <= neg, neg - pos, pos - neg))
 
 Resultado de input6.s:
-ERROR: inputs/input6.s: Assembler messages:
-inputs/input6.s:56: Error: symbol `else_0' is already defined
-inputs/input6.s:58: Error: symbol `endif_0' is already defined
-inputs/input6.s:115: Error: symbol `else_0' is already defined
-inputs/input6.s:122: Error: symbol `endif_0' is already defined
-No se pudo ensamblar o ejecutar inputs/input6.s
+20
+18
+2
 
 ========================================
 input7.txt
@@ -240,7 +229,14 @@ print(count);
 print(ifexp(count <= 5, 999, c * 2))
 
 Resultado de input10.s:
-ERROR: inputs/input10.s: Assembler messages:
-inputs/input10.s:85: Error: symbol `else_0' is already defined
-inputs/input10.s:92: Error: symbol `endif_0' is already defined
-No se pudo ensamblar o ejecutar inputs/input10.s
+0
+1
+1
+2
+3
+5
+8
+13
+21
+7
+42

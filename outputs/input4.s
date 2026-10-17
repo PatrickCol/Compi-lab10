@@ -34,10 +34,10 @@ jne do_0
 enddowhile_0:
 movq $1, %rax
 movq %rax, -16(%rbp)
-while_0:
+while_1:
 movq $1, %rax
 cmpq $0, %rax
-je endwhile_0
+je endwhile_1
 movq -16(%rbp), %rax
 pushq %rax
 movq $2, %rax
@@ -54,13 +54,13 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_1
-jmp endwhile_0
-jmp endif_1
-else_1:
-endif_1:
-jmp while_0
-endwhile_0:
+je else_2
+jmp endwhile_1
+jmp endif_2
+else_2:
+endif_2:
+jmp while_1
+endwhile_1:
 movq -16(%rbp), %rax
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi

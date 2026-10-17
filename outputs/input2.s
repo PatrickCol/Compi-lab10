@@ -19,12 +19,12 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_0
 movq -8(%rbp), %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_0
+ifexp_else_0:
 movq -16(%rbp), %rax
-endif_0:
+ifexp_end_0:
 movq %rax, -24(%rbp)
 movq -16(%rbp), %rax
 pushq %rax
@@ -35,12 +35,12 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_1
 movq -8(%rbp), %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_1
+ifexp_else_1:
 movq -16(%rbp), %rax
-endif_0:
+ifexp_end_1:
 movq %rax, -32(%rbp)
 movq -24(%rbp), %rax
 movq %rax, %rsi
@@ -61,10 +61,10 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_2
 movq $100, %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_2
+ifexp_else_2:
 movq -24(%rbp), %rax
 pushq %rax
 movq $10, %rax
@@ -74,13 +74,13 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_3
 movq $200, %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_3
+ifexp_else_3:
 movq $300, %rax
-endif_0:
-endif_0:
+ifexp_end_3:
+ifexp_end_2:
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi
 movl $0, %eax
@@ -94,22 +94,22 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_4
 movq -8(%rbp), %rax
 pushq %rax
 movq $2, %rax
 movq %rax, %rcx
 popq %rax
 imulq %rcx, %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_4
+ifexp_else_4:
 movq -16(%rbp), %rax
 pushq %rax
 movq $3, %rax
 movq %rax, %rcx
 popq %rax
 imulq %rcx, %rax
-endif_0:
+ifexp_end_4:
 pushq %rax
 movq $15, %rax
 pushq %rax
@@ -120,12 +120,12 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je ifexp_else_5
 movq $50, %rax
-jmp endif_0
-else_0:
+jmp ifexp_end_5
+ifexp_else_5:
 movq $25, %rax
-endif_0:
+ifexp_end_5:
 movq %rax, %rcx
 popq %rax
 addq %rcx, %rax

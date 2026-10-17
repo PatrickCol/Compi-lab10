@@ -37,11 +37,11 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_0
+je else_1
 jmp endwhile_0
-jmp endif_0
-else_0:
-endif_0:
+jmp endif_1
+else_1:
+endif_1:
 movq -16(%rbp), %rax
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi

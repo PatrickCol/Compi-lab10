@@ -23,7 +23,7 @@ cmpq $0, %rax
 je endwhile_0
 movq $1, %rax
 movq %rax, -24(%rbp)
-do_0:
+do_1:
 movq $3, %rax
 pushq %rax
 movq -24(%rbp), %rax
@@ -33,11 +33,11 @@ cmpq %rcx, %rax
 setle %al
 movzbq %al, %rax
 cmpq $0, %rax
-je else_1
-jmp endwhile_0
-jmp endif_1
-else_1:
-endif_1:
+je else_2
+jmp enddowhile_1
+jmp endif_2
+else_2:
+endif_2:
 movq -16(%rbp), %rax
 pushq %rax
 movq -8(%rbp), %rax
@@ -64,8 +64,8 @@ addq %rcx, %rax
 movq %rax, -24(%rbp)
 movq $1, %rax
 cmpq $0, %rax
-jne do_0
-enddowhile_0:
+jne do_1
+enddowhile_1:
 movq -8(%rbp), %rax
 pushq %rax
 movq $1, %rax

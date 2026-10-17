@@ -2,67 +2,622 @@
 input1.txt
 ========================================
 Ejercicio:
-x = 10 -5 ;
-y = 4 *5 ;
-print(x) ;
-print(y)
+i = 1;
+total = 0;
+do
+    total = total + i * 3;
+    i = i + 1
+while i <= 4;
+print(total);
+print(i)
 
 Resultado de input1.s:
-5
-20
+ERROR: inputs\input1.s: Assembler messages:
+inputs\input1.s:6: Error: bad register name `%rbp'
+inputs\input1.s:7: Error: bad register name `%rsp'
+inputs\input1.s:8: Error: bad register name `%rsp'
+inputs\input1.s:9: Error: bad register name `%rax'
+inputs\input1.s:10: Error: bad register name `%rax'
+inputs\input1.s:11: Error: bad register name `%rax'
+inputs\input1.s:12: Error: bad register name `%rax'
+inputs\input1.s:13: Error: bad register name `%rbp)'
+inputs\input1.s:14: Error: bad register name `%rax'
+inputs\input1.s:15: Error: bad register name `%rbp)'
+inputs\input1.s:16: Error: bad register name `%rax'
+inputs\input1.s:17: Error: bad register name `%rax'
+inputs\input1.s:18: Error: bad register name `%rax'
+inputs\input1.s:19: Error: bad register name `%rax'
+inputs\input1.s:20: Error: bad register name `%rcx'
+inputs\input1.s:21: Error: bad register name `%rax'
+inputs\input1.s:22: Error: bad register name `%rax'
+inputs\input1.s:23: Error: bad register name `%rcx'
+inputs\input1.s:24: Error: bad register name `%rax'
+inputs\input1.s:25: Error: bad register name `%rbp)'
+inputs\input1.s:26: Error: bad register name `%rax'
+inputs\input1.s:27: Error: bad register name `%rax'
+inputs\input1.s:28: Error: bad register name `%rax'
+inputs\input1.s:29: Error: bad register name `%rax'
+inputs\input1.s:30: Error: bad register name `%rcx'
+inputs\input1.s:31: Error: bad register name `%rax'
+inputs\input1.s:33: Error: bad register name `%rbp)'
+inputs\input1.s:34: Error: bad register name `%rax'
+inputs\input1.s:35: Error: bad register name `%rax'
+inputs\input1.s:36: Error: bad register name `%rax'
+inputs\input1.s:37: Error: bad register name `%rax'
+inputs\input1.s:38: Error: bad register name `%rcx'
+inputs\input1.s:40: Error: bad register name `%rax'
+inputs\input1.s:41: Error: bad register name `%rax'
+inputs\input1.s:43: Error: bad register name `%rbp)'
+inputs\input1.s:44: Error: bad register name `%rax'
+inputs\input1.s:45: Error: bad register name `%rbp)'
+inputs\input1.s:46: Error: bad register name `%rax'
+inputs\input1.s:47: Error: bad register name `%rax'
+inputs\input1.s:48: Error: bad register name `%rax'
+inputs\input1.s:49: Error: bad register name `%rax'
+inputs\input1.s:50: Error: bad register name `%rcx'
+inputs\input1.s:51: Error: bad register name `%rax'
+inputs\input1.s:52: Error: bad register name `%rax'
+inputs\input1.s:53: Error: bad register name `%rcx'
+inputs\input1.s:54: Error: bad register name `%rax'
+inputs\input1.s:55: Error: bad register name `%rbp)'
+inputs\input1.s:56: Error: bad register name `%rax'
+inputs\input1.s:57: Error: bad register name `%rax'
+inputs\input1.s:58: Error: bad register name `%rax'
+inputs\input1.s:59: Error: bad register name `%rax'
+inputs\input1.s:60: Error: bad register name `%rcx'
+inputs\input1.s:61: Error: bad register name `%rax'
+inputs\input1.s:64: Error: bad register name `%rbp)'
+inputs\input1.s:65: Error: bad register name `%rax'
+inputs\input1.s:66: Error: bad register name `%rip)'
+inputs\input1.s:69: Error: bad register name `%rbp)'
+inputs\input1.s:70: Error: bad register name `%rax'
+inputs\input1.s:71: Error: bad register name `%rip)'
+inputs\input1.s:74: Error: bad register name `%rax'
+inputs\input1.s:77: Error: junk at end of line, first unrecognized character is `-'
+No se pudo ensamblar o ejecutar inputs\input1.s
 
 ========================================
 input2.txt
 ========================================
 Ejercicio:
-b = 2*3+4;
-print(b)
+a = 7;
+b = 12;
+min = ifexp(a <= b, a, b);
+max = ifexp(b <= a, a, b);
+print(min);
+print(max);
+print(ifexp(min <= 5, 100, ifexp(min <= 10, 200, 300)));
+print(ifexp(a <= 10, a * 2, b * 3) + ifexp(15 <= b, 50, 25))
 
 Resultado de input2.s:
-10
+ERROR: inputs\input2.s: Assembler messages:
+inputs\input2.s:6: Error: bad register name `%rbp'
+inputs\input2.s:7: Error: bad register name `%rsp'
+inputs\input2.s:8: Error: bad register name `%rsp'
+inputs\input2.s:9: Error: bad register name `%rax'
+inputs\input2.s:10: Error: bad register name `%rax'
+inputs\input2.s:11: Error: bad register name `%rax'
+inputs\input2.s:12: Error: bad register name `%rax'
+inputs\input2.s:13: Error: bad register name `%rbp)'
+inputs\input2.s:14: Error: bad register name `%rax'
+inputs\input2.s:15: Error: bad register name `%rbp)'
+inputs\input2.s:16: Error: bad register name `%rax'
+inputs\input2.s:17: Error: bad register name `%rax'
+inputs\input2.s:18: Error: bad register name `%rcx'
+inputs\input2.s:20: Error: bad register name `%rax'
+inputs\input2.s:21: Error: bad register name `%rax'
+inputs\input2.s:23: Error: bad register name `%rbp)'
+inputs\input2.s:26: Error: bad register name `%rbp)'
+inputs\input2.s:28: Error: bad register name `%rax'
+inputs\input2.s:29: Error: bad register name `%rbp)'
+inputs\input2.s:30: Error: bad register name `%rax'
+inputs\input2.s:31: Error: bad register name `%rbp)'
+inputs\input2.s:32: Error: bad register name `%rax'
+inputs\input2.s:33: Error: bad register name `%rax'
+inputs\input2.s:34: Error: bad register name `%rcx'
+inputs\input2.s:36: Error: bad register name `%rax'
+inputs\input2.s:37: Error: bad register name `%rax'
+inputs\input2.s:39: Error: bad register name `%rbp)'
+inputs\input2.s:41: Error: symbol `else_0' is already defined
+inputs\input2.s:42: Error: bad register name `%rbp)'
+inputs\input2.s:43: Error: symbol `endif_0' is already defined
+inputs\input2.s:44: Error: bad register name `%rax'
+inputs\input2.s:45: Error: bad register name `%rbp)'
+inputs\input2.s:46: Error: bad register name `%rax'
+inputs\input2.s:47: Error: bad register name `%rip)'
+inputs\input2.s:50: Error: bad register name `%rbp)'
+inputs\input2.s:51: Error: bad register name `%rax'
+inputs\input2.s:52: Error: bad register name `%rip)'
+inputs\input2.s:55: Error: bad register name `%rbp)'
+inputs\input2.s:56: Error: bad register name `%rax'
+inputs\input2.s:57: Error: bad register name `%rax'
+inputs\input2.s:58: Error: bad register name `%rax'
+inputs\input2.s:59: Error: bad register name `%rax'
+inputs\input2.s:60: Error: bad register name `%rcx'
+inputs\input2.s:62: Error: bad register name `%rax'
+inputs\input2.s:63: Error: bad register name `%rax'
+inputs\input2.s:65: Error: bad register name `%rax'
+inputs\input2.s:67: Error: symbol `else_0' is already defined
+inputs\input2.s:68: Error: bad register name `%rbp)'
+inputs\input2.s:69: Error: bad register name `%rax'
+inputs\input2.s:70: Error: bad register name `%rax'
+inputs\input2.s:71: Error: bad register name `%rax'
+inputs\input2.s:72: Error: bad register name `%rax'
+inputs\input2.s:73: Error: bad register name `%rcx'
+inputs\input2.s:75: Error: bad register name `%rax'
+inputs\input2.s:76: Error: bad register name `%rax'
+inputs\input2.s:78: Error: bad register name `%rax'
+inputs\input2.s:80: Error: symbol `else_0' is already defined
+inputs\input2.s:81: Error: bad register name `%rax'
+inputs\input2.s:82: Error: symbol `endif_0' is already defined
+inputs\input2.s:83: Error: symbol `endif_0' is already defined
+inputs\input2.s:84: Error: bad register name `%rax'
+inputs\input2.s:85: Error: bad register name `%rip)'
+inputs\input2.s:88: Error: bad register name `%rbp)'
+inputs\input2.s:89: Error: bad register name `%rax'
+inputs\input2.s:90: Error: bad register name `%rax'
+inputs\input2.s:91: Error: bad register name `%rax'
+inputs\input2.s:92: Error: bad register name `%rax'
+inputs\input2.s:93: Error: bad register name `%rcx'
+inputs\input2.s:95: Error: bad register name `%rax'
+inputs\input2.s:96: Error: bad register name `%rax'
+inputs\input2.s:98: Error: bad register name `%rbp)'
+inputs\input2.s:99: Error: bad register name `%rax'
+inputs\input2.s:100: Error: bad register name `%rax'
+inputs\input2.s:101: Error: bad register name `%rax'
+inputs\input2.s:102: Error: bad register name `%rax'
+inputs\input2.s:103: Error: bad register name `%rcx'
+inputs\input2.s:105: Error: symbol `else_0' is already defined
+inputs\input2.s:106: Error: bad register name `%rbp)'
+inputs\input2.s:107: Error: bad register name `%rax'
+inputs\input2.s:108: Error: bad register name `%rax'
+inputs\input2.s:109: Error: bad register name `%rax'
+inputs\input2.s:110: Error: bad register name `%rax'
+inputs\input2.s:111: Error: bad register name `%rcx'
+inputs\input2.s:112: Error: symbol `endif_0' is already defined
+inputs\input2.s:113: Error: bad register name `%rax'
+inputs\input2.s:114: Error: bad register name `%rax'
+inputs\input2.s:115: Error: bad register name `%rax'
+inputs\input2.s:116: Error: bad register name `%rbp)'
+inputs\input2.s:117: Error: bad register name `%rax'
+inputs\input2.s:118: Error: bad register name `%rax'
+inputs\input2.s:119: Error: bad register name `%rcx'
+inputs\input2.s:121: Error: bad register name `%rax'
+inputs\input2.s:122: Error: bad register name `%rax'
+inputs\input2.s:124: Error: bad register name `%rax'
+inputs\input2.s:126: Error: symbol `else_0' is already defined
+inputs\input2.s:127: Error: bad register name `%rax'
+inputs\input2.s:128: Error: symbol `endif_0' is already defined
+inputs\input2.s:129: Error: bad register name `%rax'
+inputs\input2.s:130: Error: bad register name `%rax'
+inputs\input2.s:131: Error: bad register name `%rcx'
+inputs\input2.s:132: Error: bad register name `%rax'
+inputs\input2.s:133: Error: bad register name `%rip)'
+inputs\input2.s:136: Error: bad register name `%rax'
+inputs\input2.s:139: Error: junk at end of line, first unrecognized character is `-'
+No se pudo ensamblar o ejecutar inputs\input2.s
 
 ========================================
 input3.txt
 ========================================
 Ejercicio:
-n = 4 <= 10;
-m = 10 <= 5;
-print(n);
-print(m)
+x = 1;
+sum = 0;
+while 1 do
+    sum = sum + x;
+    x = x + 2;
+    if 9 <= x then
+        break
+    endif;
+    print(sum)
+enddo;
+print(x);
+print(sum * 10)
 
 Resultado de input3.s:
-1
-0
+ERROR: Error al parsear: Error sintÃ¡ctico
 
 ========================================
 input4.txt
 ========================================
 Ejercicio:
-x = 4;
-if x <= 5 then 
-    print(x*10)
-else
-    print(x+1)
-endif
+c = 20;
+do
+    print(c);
+    c = c + 5
+while c <= 15;
+m = 1;
+while 1 do
+    m = m * 2;
+    if 16 <= m then
+        break
+    endif
+enddo;
+print(m);
+print(c + m)
 
 Resultado de input4.s:
-40
+ERROR: Error al parsear: Error sintÃ¡ctico
 
 ========================================
 input5.txt
 ========================================
 Ejercicio:
-a = 1;
-b = a+1;
-c = b+1;
-d = c+1;
-e = d+1;
-f = e+1;
-g = f+1;
-h = g+1;
-print(a+b+c+d+e+f+g+h);
-print(1000000+h)
+row = 1;
+acc = 0;
+while row <= 3 do
+    col = 1;
+    do
+        if 3 <= col then
+            break
+        endif;
+        acc = acc + row * 10 + col;
+        col = col + 1
+    while 1;
+    row = row + 1
+enddo;
+print(acc);
+print(row);
+print(col)
 
 Resultado de input5.s:
-36
-1000008
+ERROR: Error al parsear: Error sintÃ¡ctico
+
+========================================
+input6.txt
+========================================
+Ejercicio:
+k = 1;
+pos = 0;
+neg = 0;
+do
+    pos = pos + ifexp(k <= 4, k * 2, 0);
+    neg = neg + ifexp(k <= 4, 0, k);
+    if 7 <= k then
+        break
+    endif;
+    k = k + 1
+while 1;
+print(pos);
+print(neg);
+print(ifexp(pos <= neg, neg - pos, pos - neg))
+
+Resultado de input6.s:
+ERROR: Error al parsear: Error sintÃ¡ctico
+
+========================================
+input7.txt
+========================================
+Ejercicio:
+v = 15;
+w = 25;
+res = 0;
+if v <= w then
+    if w <= 20 then
+        res = 1
+    else
+        res = 2
+    endif
+else
+    res = 3
+endif;
+print(res);
+if res <= 1 then
+    v = v + 100
+else
+    v = v + 200
+endif;
+print(v)
+
+Resultado de input7.s:
+ERROR: inputs\input7.s: Assembler messages:
+inputs\input7.s:6: Error: bad register name `%rbp'
+inputs\input7.s:7: Error: bad register name `%rsp'
+inputs\input7.s:8: Error: bad register name `%rsp'
+inputs\input7.s:9: Error: bad register name `%rax'
+inputs\input7.s:10: Error: bad register name `%rax'
+inputs\input7.s:11: Error: bad register name `%rax'
+inputs\input7.s:12: Error: bad register name `%rax'
+inputs\input7.s:13: Error: bad register name `%rax'
+inputs\input7.s:14: Error: bad register name `%rax'
+inputs\input7.s:15: Error: bad register name `%rbp)'
+inputs\input7.s:16: Error: bad register name `%rax'
+inputs\input7.s:17: Error: bad register name `%rbp)'
+inputs\input7.s:18: Error: bad register name `%rax'
+inputs\input7.s:19: Error: bad register name `%rax'
+inputs\input7.s:20: Error: bad register name `%rcx'
+inputs\input7.s:22: Error: bad register name `%rax'
+inputs\input7.s:23: Error: bad register name `%rax'
+inputs\input7.s:25: Error: bad register name `%rbp)'
+inputs\input7.s:26: Error: bad register name `%rax'
+inputs\input7.s:27: Error: bad register name `%rax'
+inputs\input7.s:28: Error: bad register name `%rax'
+inputs\input7.s:29: Error: bad register name `%rax'
+inputs\input7.s:30: Error: bad register name `%rcx'
+inputs\input7.s:32: Error: bad register name `%rax'
+inputs\input7.s:33: Error: bad register name `%rax'
+inputs\input7.s:35: Error: bad register name `%rax'
+inputs\input7.s:36: Error: bad register name `%rax'
+inputs\input7.s:39: Error: bad register name `%rax'
+inputs\input7.s:40: Error: bad register name `%rax'
+inputs\input7.s:43: Error: symbol `else_0' is already defined
+inputs\input7.s:44: Error: bad register name `%rax'
+inputs\input7.s:45: Error: bad register name `%rax'
+inputs\input7.s:46: Error: symbol `endif_0' is already defined
+inputs\input7.s:47: Error: bad register name `%rbp)'
+inputs\input7.s:48: Error: bad register name `%rax'
+inputs\input7.s:49: Error: bad register name `%rip)'
+inputs\input7.s:52: Error: bad register name `%rbp)'
+inputs\input7.s:53: Error: bad register name `%rax'
+inputs\input7.s:54: Error: bad register name `%rax'
+inputs\input7.s:55: Error: bad register name `%rax'
+inputs\input7.s:56: Error: bad register name `%rax'
+inputs\input7.s:57: Error: bad register name `%rcx'
+inputs\input7.s:59: Error: bad register name `%rax'
+inputs\input7.s:60: Error: bad register name `%rax'
+inputs\input7.s:62: Error: bad register name `%rbp)'
+inputs\input7.s:63: Error: bad register name `%rax'
+inputs\input7.s:64: Error: bad register name `%rax'
+inputs\input7.s:65: Error: bad register name `%rax'
+inputs\input7.s:66: Error: bad register name `%rax'
+inputs\input7.s:67: Error: bad register name `%rcx'
+inputs\input7.s:68: Error: bad register name `%rax'
+inputs\input7.s:70: Error: symbol `else_0' is already defined
+inputs\input7.s:71: Error: bad register name `%rbp)'
+inputs\input7.s:72: Error: bad register name `%rax'
+inputs\input7.s:73: Error: bad register name `%rax'
+inputs\input7.s:74: Error: bad register name `%rax'
+inputs\input7.s:75: Error: bad register name `%rax'
+inputs\input7.s:76: Error: bad register name `%rcx'
+inputs\input7.s:77: Error: bad register name `%rax'
+inputs\input7.s:78: Error: symbol `endif_0' is already defined
+inputs\input7.s:79: Error: bad register name `%rbp)'
+inputs\input7.s:80: Error: bad register name `%rax'
+inputs\input7.s:81: Error: bad register name `%rip)'
+inputs\input7.s:84: Error: bad register name `%rax'
+inputs\input7.s:87: Error: junk at end of line, first unrecognized character is `-'
+No se pudo ensamblar o ejecutar inputs\input7.s
+
+========================================
+input8.txt
+========================================
+Ejercicio:
+n = 5;
+fact = 1;
+step = 0;
+while 1 <= n do
+    fact = fact * n;
+    step = step + 1;
+    n = n - 1
+enddo;
+print(fact);
+print(step);
+print(ifexp(100 <= fact, fact, 0))
+
+Resultado de input8.s:
+ERROR: inputs\input8.s: Assembler messages:
+inputs\input8.s:6: Error: bad register name `%rbp'
+inputs\input8.s:7: Error: bad register name `%rsp'
+inputs\input8.s:8: Error: bad register name `%rsp'
+inputs\input8.s:9: Error: bad register name `%rax'
+inputs\input8.s:10: Error: bad register name `%rax'
+inputs\input8.s:11: Error: bad register name `%rax'
+inputs\input8.s:12: Error: bad register name `%rax'
+inputs\input8.s:13: Error: bad register name `%rax'
+inputs\input8.s:14: Error: bad register name `%rax'
+inputs\input8.s:15: Error: no such instruction: `while_0movq $1,%rax'
+inputs\input8.s:16: Error: bad register name `%rax'
+inputs\input8.s:17: Error: bad register name `%rbp)'
+inputs\input8.s:18: Error: bad register name `%rax'
+inputs\input8.s:19: Error: bad register name `%rax'
+inputs\input8.s:20: Error: bad register name `%rcx'
+inputs\input8.s:22: Error: bad register name `%rax'
+inputs\input8.s:23: Error: bad register name `%rax'
+inputs\input8.s:25: Error: bad register name `%rbp)'
+inputs\input8.s:26: Error: bad register name `%rax'
+inputs\input8.s:27: Error: bad register name `%rbp)'
+inputs\input8.s:28: Error: bad register name `%rax'
+inputs\input8.s:29: Error: bad register name `%rax'
+inputs\input8.s:30: Error: bad register name `%rcx'
+inputs\input8.s:31: Error: bad register name `%rax'
+inputs\input8.s:32: Error: bad register name `%rbp)'
+inputs\input8.s:33: Error: bad register name `%rax'
+inputs\input8.s:34: Error: bad register name `%rax'
+inputs\input8.s:35: Error: bad register name `%rax'
+inputs\input8.s:36: Error: bad register name `%rax'
+inputs\input8.s:37: Error: bad register name `%rcx'
+inputs\input8.s:38: Error: bad register name `%rax'
+inputs\input8.s:39: Error: bad register name `%rbp)'
+inputs\input8.s:40: Error: bad register name `%rax'
+inputs\input8.s:41: Error: bad register name `%rax'
+inputs\input8.s:42: Error: bad register name `%rax'
+inputs\input8.s:43: Error: bad register name `%rax'
+inputs\input8.s:44: Error: bad register name `%rcx'
+inputs\input8.s:45: Error: bad register name `%rax'
+inputs\input8.s:48: Error: bad register name `%rbp)'
+inputs\input8.s:49: Error: bad register name `%rax'
+inputs\input8.s:50: Error: bad register name `%rip)'
+inputs\input8.s:53: Error: bad register name `%rbp)'
+inputs\input8.s:54: Error: bad register name `%rax'
+inputs\input8.s:55: Error: bad register name `%rip)'
+inputs\input8.s:58: Error: bad register name `%rax'
+inputs\input8.s:59: Error: bad register name `%rax'
+inputs\input8.s:60: Error: bad register name `%rbp)'
+inputs\input8.s:61: Error: bad register name `%rax'
+inputs\input8.s:62: Error: bad register name `%rax'
+inputs\input8.s:63: Error: bad register name `%rcx'
+inputs\input8.s:65: Error: bad register name `%rax'
+inputs\input8.s:66: Error: bad register name `%rax'
+inputs\input8.s:68: Error: bad register name `%rbp)'
+inputs\input8.s:71: Error: bad register name `%rax'
+inputs\input8.s:73: Error: bad register name `%rax'
+inputs\input8.s:74: Error: bad register name `%rip)'
+inputs\input8.s:77: Error: bad register name `%rax'
+inputs\input8.s:80: Error: junk at end of line, first unrecognized character is `-'
+No se pudo ensamblar o ejecutar inputs\input8.s
+
+========================================
+input9.txt
+========================================
+Ejercicio:
+idx = 1;
+sumA = 0;
+sumB = 0;
+do
+    sumA = sumA + idx;
+    if 3 <= idx then
+        sumB = sumB + idx * 10
+    else
+        sumB = sumB + idx
+    endif;
+    idx = idx + 1
+while idx <= 5;
+print(sumA);
+print(sumB);
+print(sumB - sumA)
+
+Resultado de input9.s:
+ERROR: inputs\input9.s: Assembler messages:
+inputs\input9.s:6: Error: bad register name `%rbp'
+inputs\input9.s:7: Error: bad register name `%rsp'
+inputs\input9.s:8: Error: bad register name `%rsp'
+inputs\input9.s:9: Error: bad register name `%rax'
+inputs\input9.s:10: Error: bad register name `%rax'
+inputs\input9.s:11: Error: bad register name `%rax'
+inputs\input9.s:12: Error: bad register name `%rax'
+inputs\input9.s:13: Error: bad register name `%rax'
+inputs\input9.s:14: Error: bad register name `%rax'
+inputs\input9.s:15: Error: bad register name `%rbp)'
+inputs\input9.s:16: Error: bad register name `%rax'
+inputs\input9.s:17: Error: bad register name `%rbp)'
+inputs\input9.s:18: Error: bad register name `%rax'
+inputs\input9.s:19: Error: bad register name `%rax'
+inputs\input9.s:20: Error: bad register name `%rcx'
+inputs\input9.s:21: Error: bad register name `%rax'
+inputs\input9.s:22: Error: bad register name `%rax'
+inputs\input9.s:23: Error: bad register name `%rax'
+inputs\input9.s:24: Error: bad register name `%rbp)'
+inputs\input9.s:25: Error: bad register name `%rax'
+inputs\input9.s:26: Error: bad register name `%rax'
+inputs\input9.s:27: Error: bad register name `%rcx'
+inputs\input9.s:29: Error: bad register name `%rax'
+inputs\input9.s:30: Error: bad register name `%rax'
+inputs\input9.s:32: Error: bad register name `%rbp)'
+inputs\input9.s:33: Error: bad register name `%rax'
+inputs\input9.s:34: Error: bad register name `%rbp)'
+inputs\input9.s:35: Error: bad register name `%rax'
+inputs\input9.s:36: Error: bad register name `%rax'
+inputs\input9.s:37: Error: bad register name `%rax'
+inputs\input9.s:38: Error: bad register name `%rax'
+inputs\input9.s:39: Error: bad register name `%rcx'
+inputs\input9.s:40: Error: bad register name `%rax'
+inputs\input9.s:41: Error: bad register name `%rax'
+inputs\input9.s:42: Error: bad register name `%rcx'
+inputs\input9.s:43: Error: bad register name `%rax'
+inputs\input9.s:46: Error: bad register name `%rbp)'
+inputs\input9.s:47: Error: bad register name `%rax'
+inputs\input9.s:48: Error: bad register name `%rbp)'
+inputs\input9.s:49: Error: bad register name `%rax'
+inputs\input9.s:50: Error: bad register name `%rax'
+inputs\input9.s:51: Error: bad register name `%rcx'
+inputs\input9.s:52: Error: bad register name `%rax'
+inputs\input9.s:54: Error: bad register name `%rbp)'
+inputs\input9.s:55: Error: bad register name `%rax'
+inputs\input9.s:56: Error: bad register name `%rax'
+inputs\input9.s:57: Error: bad register name `%rax'
+inputs\input9.s:58: Error: bad register name `%rax'
+inputs\input9.s:59: Error: bad register name `%rcx'
+inputs\input9.s:60: Error: bad register name `%rax'
+inputs\input9.s:62: Error: bad register name `%rbp)'
+inputs\input9.s:63: Error: bad register name `%rax'
+inputs\input9.s:64: Error: bad register name `%rax'
+inputs\input9.s:65: Error: bad register name `%rax'
+inputs\input9.s:66: Error: bad register name `%rax'
+inputs\input9.s:67: Error: bad register name `%rcx'
+inputs\input9.s:69: Error: bad register name `%rax'
+inputs\input9.s:70: Error: bad register name `%rax'
+inputs\input9.s:72: Error: bad register name `%rbp)'
+inputs\input9.s:73: Error: bad register name `%rax'
+inputs\input9.s:74: Error: bad register name `%rbp)'
+inputs\input9.s:75: Error: bad register name `%rax'
+inputs\input9.s:76: Error: bad register name `%rax'
+inputs\input9.s:77: Error: bad register name `%rcx'
+inputs\input9.s:78: Error: bad register name `%rax'
+inputs\input9.s:79: Error: bad register name `%rax'
+inputs\input9.s:80: Error: bad register name `%rax'
+inputs\input9.s:81: Error: bad register name `%rbp)'
+inputs\input9.s:82: Error: bad register name `%rax'
+inputs\input9.s:83: Error: bad register name `%rax'
+inputs\input9.s:84: Error: bad register name `%rcx'
+inputs\input9.s:86: Error: bad register name `%rax'
+inputs\input9.s:87: Error: bad register name `%rax'
+inputs\input9.s:89: Error: bad register name `%rbp)'
+inputs\input9.s:90: Error: bad register name `%rax'
+inputs\input9.s:91: Error: bad register name `%rbp)'
+inputs\input9.s:92: Error: bad register name `%rax'
+inputs\input9.s:93: Error: bad register name `%rax'
+inputs\input9.s:94: Error: bad register name `%rax'
+inputs\input9.s:95: Error: bad register name `%rax'
+inputs\input9.s:96: Error: bad register name `%rcx'
+inputs\input9.s:97: Error: bad register name `%rax'
+inputs\input9.s:98: Error: bad register name `%rax'
+inputs\input9.s:99: Error: bad register name `%rcx'
+inputs\input9.s:100: Error: bad register name `%rax'
+inputs\input9.s:102: Error: symbol `else_0' is already defined
+inputs\input9.s:103: Error: bad register name `%rbp)'
+inputs\input9.s:104: Error: bad register name `%rax'
+inputs\input9.s:105: Error: bad register name `%rbp)'
+inputs\input9.s:106: Error: bad register name `%rax'
+inputs\input9.s:107: Error: bad register name `%rax'
+inputs\input9.s:108: Error: bad register name `%rcx'
+inputs\input9.s:109: Error: bad register name `%rax'
+inputs\input9.s:110: Error: symbol `endif_0' is already defined
+inputs\input9.s:111: Error: bad register name `%rbp)'
+inputs\input9.s:112: Error: bad register name `%rax'
+inputs\input9.s:113: Error: bad register name `%rax'
+inputs\input9.s:114: Error: bad register name `%rax'
+inputs\input9.s:115: Error: bad register name `%rax'
+inputs\input9.s:116: Error: bad register name `%rcx'
+inputs\input9.s:117: Error: bad register name `%rax'
+inputs\input9.s:120: Error: bad register name `%rbp)'
+inputs\input9.s:121: Error: bad register name `%rax'
+inputs\input9.s:122: Error: bad register name `%rip)'
+inputs\input9.s:125: Error: bad register name `%rbp)'
+inputs\input9.s:126: Error: bad register name `%rax'
+inputs\input9.s:127: Error: bad register name `%rip)'
+inputs\input9.s:130: Error: bad register name `%rbp)'
+inputs\input9.s:131: Error: bad register name `%rax'
+inputs\input9.s:132: Error: bad register name `%rbp)'
+inputs\input9.s:133: Error: bad register name `%rax'
+inputs\input9.s:134: Error: bad register name `%rax'
+inputs\input9.s:135: Error: bad register name `%rcx'
+inputs\input9.s:136: Error: bad register name `%rax'
+inputs\input9.s:137: Error: bad register name `%rip)'
+inputs\input9.s:140: Error: bad register name `%rax'
+inputs\input9.s:143: Error: junk at end of line, first unrecognized character is `-'
+No se pudo ensamblar o ejecutar inputs\input9.s
+
+========================================
+input10.txt
+========================================
+Ejercicio:
+a = 0;
+b = 1;
+count = 0;
+print(a);
+print(b);
+while 1 do
+    c = a + b;
+    a = b;
+    b = c;
+    count = count + 1;
+    print(c);
+    if 20 <= c then
+        break
+    endif
+enddo;
+print(count);
+print(ifexp(count <= 5, 999, c * 2))
+
+Resultado de input10.s:
+ERROR: Error al parsear: Error sintÃ¡ctico

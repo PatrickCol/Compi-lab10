@@ -23,7 +23,7 @@ shutil.rmtree(output_dir, ignore_errors=True)
 os.makedirs(output_dir)
 reporte = []
 
-for i in range(1, 6):
+for i in range(1, 11):
     filename = f"input{i}.txt"
     filepath = os.path.join(input_dir, filename)
 
@@ -32,7 +32,7 @@ for i in range(1, 6):
         continue
 
     print(f"Ejecutando {filename}")
-    result = subprocess.run(["./a.exe", filepath], capture_output=True, text=True)
+    result = subprocess.run(["./a.out", filepath], capture_output=True, text=True)
 
     # Archivos que genera el compilador en inputs/
     tokens_file = os.path.join(input_dir, f"input{i}_tokens.txt")

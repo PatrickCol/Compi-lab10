@@ -6,26 +6,67 @@ main:
 pushq %rbp
 movq %rsp, %rbp
 subq $64, %rsp
-movq $10, %rax
-pushq %rax
-movq $5, %rax
-movq %rax, %rcx
-popq %rax
-subq %rcx, %rax
+movq $1, %rax
 movq %rax, -8(%rbp)
-movq $4, %rax
+movq $0, %rax
+movq %rax, -16(%rbp)
+movq -16(%rbp), %rax
 pushq %rax
-movq $5, %rax
+movq -8(%rbp), %rax
+pushq %rax
+movq $3, %rax
 movq %rax, %rcx
 popq %rax
 imulq %rcx, %rax
+movq %rax, %rcx
+popq %rax
+addq %rcx, %rax
 movq %rax, -16(%rbp)
 movq -8(%rbp), %rax
+pushq %rax
+movq $1, %rax
+movq %rax, %rcx
+popq %rax
+addq %rcx, %rax
+movq %rax, -8(%rbp)
+do_0:
+movq -8(%rbp), %rax
+pushq %rax
+movq $4, %rax
+movq %rax, %rcx
+popq %rax
+cmpq %rcx, %rax
+setle %al
+movzbq %al, %rax
+cmpq $0, %rax
+je enddowhile_0
+movq -16(%rbp), %rax
+pushq %rax
+movq -8(%rbp), %rax
+pushq %rax
+movq $3, %rax
+movq %rax, %rcx
+popq %rax
+imulq %rcx, %rax
+movq %rax, %rcx
+popq %rax
+addq %rcx, %rax
+movq %rax, -16(%rbp)
+movq -8(%rbp), %rax
+pushq %rax
+movq $1, %rax
+movq %rax, %rcx
+popq %rax
+addq %rcx, %rax
+movq %rax, -8(%rbp)
+jmp do_0
+enddowhile_0:
+movq -16(%rbp), %rax
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi
 movl $0, %eax
 call printf@PLT
-movq -16(%rbp), %rax
+movq -8(%rbp), %rax
 movq %rax, %rsi
 leaq print_fmt(%rip), %rdi
 movl $0, %eax

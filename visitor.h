@@ -12,7 +12,6 @@ class AssignStmt;
 class PrintStmt;
 class IfStmt;
 class WhileStmt;
-class ForStmt;
 class DoWhileStmt;
 class Program;
 
@@ -25,7 +24,6 @@ public:
     virtual void visit(AssignStmt* stm) = 0;
     virtual void visit(PrintStmt* stm) = 0;
     virtual void visit(IfStmt* stm) = 0;
-    virtual void visit(ForStmt* stm) = 0;
     virtual void visit(WhileStmt* stm) = 0;
     virtual void visit(DoWhileStmt* stm) = 0;
     virtual int visit(IfExp* exp) = 0;
@@ -45,7 +43,6 @@ public:
     void visit(AssignStmt* stm) override;
     void visit(PrintStmt* stm) override;
     void visit(IfStmt* stm) override;
-    void visit(ForStmt* stm) override;
     void visit(WhileStmt* stm) override;
     void visit(DoWhileStmt* stm) override;
     int visit(IfExp* exp) override;

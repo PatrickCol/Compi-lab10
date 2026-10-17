@@ -44,6 +44,18 @@ int WhileStmt::accept(Visitor* visitor) {
     return 0;
 }
 
+int DoWhileStmt::accept(Visitor* visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+int IfExp::accept(Visitor* visitor) {
+    visitor->visit(this);
+    return 0;
+}
+
+
+
 // Crea el generador de código, que escribe el ensamblador en out
 GencodeVisitor::GencodeVisitor(ostream& out) : out(out) {}
 
